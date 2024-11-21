@@ -1,0 +1,12 @@
+version: '3.9'
+
+services:
+  rabbitmq:
+    image: rabbitmq:3-management
+    container_name: rabbitmq
+    ports:
+      - "5672:5672" # для соединений с приложениями
+      - "15672:15672" # для веб-интерфейса управления
+    environment:
+      RABBITMQ_DEFAULT_USER: admin # имя пользователя
+      RABBITMQ_DEFAULT_PASS: admin # пароль
